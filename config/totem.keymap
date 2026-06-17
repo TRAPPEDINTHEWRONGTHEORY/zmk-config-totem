@@ -26,6 +26,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <130>;
             flavor = "tap-preferred";
+            require-prior-idle-ms = <130>;
         };
 
         longtap: longtap {
@@ -43,6 +44,16 @@
             label = "LANGUAGE_TAP_DANCE";
             #binding-cells = <0>;
             bindings = <&longtap 3 LANG1>, <&kp LANGUAGE_2>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        Middle-click {
+            bindings = <&mkp MCLK>;
+            key-positions = <6 8>;
+            layers = <3>;
         };
     };
 
@@ -69,49 +80,46 @@
 
         nav_layer {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans    &trans         &kp HOME            &trans          &kp END          &trans
-        &trans  &trans  &trans  &trans  &trans    &kp PAGE_UP    &kp LEFT_ARROW      &kp UP_ARROW    &kp RIGHT_ARROW  &msc SCRL_UP
-&trans  &trans  &trans  &trans  &trans  &trans    &kp PAGE_DOWN  &kp LA(LEFT_ARROW)  &kp DOWN_ARROW  &kp LA(RIGHT)    &msc SCRL_DOWN  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans         &kp HOME            &kp UP_ARROW    &kp END          &msc SCRL_UP
+        &trans  &trans  &trans  &trans  &trans    &kp PAGE_UP    &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc SCRL_DOWN
+&trans  &trans  &trans  &trans  &trans  &trans    &kp PAGE_DOWN  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT)    &trans          &trans
                         &trans  &trans  &trans    &trans         &trans              &trans
             >;
         };
 
         mouse_multimedia {
             bindings = <
-        &kp C_VOLUME_UP    &bt BT_SEL 0    &bt BT_SEL 1      &bt BT_SEL 2  &trans        &trans    &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans
-        &kp C_MUTE         &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &mkp MB4  &mmv MOVE_LEFT  &mmv MOVE_UP    &mmv MOVE_RIGHT  &msc SCRL_UP
-&trans  &kp C_VOLUME_DOWN  &trans          &trans            &trans        &trans        &mkp MB5  &msc SCRL_LEFT  &mmv MOVE_DOWN  &msc SCRL_RIGHT  &msc SCRL_DOWN  &trans
-                                           &trans            &trans        &bt BT_CLR    &trans    &trans          &trans
+        &kp C_VOLUME_UP    &trans          &trans            &trans      &trans        &trans        &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP
+        &kp C_MUTE         &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans        &mkp MB4      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN
+&trans  &kp C_VOLUME_DOWN  &trans          &trans            &trans      &trans        &mkp MB5      &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &trans          &trans
+                                           &trans            &trans      &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2
             >;
         };
 
         extra_layer {
             bindings = <
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans
-
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans
             >;
         };
 
         extra_layer_2 {
             bindings = <
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans
-
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans
             >;
         };
 
         extra_layer_3 {
             bindings = <
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans
-
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans
             >;
         };
 
@@ -120,5 +128,14 @@
         extra2 { status = "reserved"; };
 
         extra3 { status = "reserved"; };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        onetwothree {
+            if-layers = <2 1>;
+            then-layer = <3>;
+        };
     };
 };
