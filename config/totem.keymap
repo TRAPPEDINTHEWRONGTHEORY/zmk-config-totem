@@ -64,15 +64,15 @@
         };
 
         mouse_mode_fixed {
-            bindings = <&tog 3>;
+            bindings = <&to 3>;
             key-positions = <35 37>;
             layers = <0>;
         };
 
         return_to_base_layer {
-            bindings = <&tog 0>;
+            bindings = <&to 0>;
             key-positions = <35 37>;
-            layers = <3>;
+            layers = <3 4>;
         };
     };
 
