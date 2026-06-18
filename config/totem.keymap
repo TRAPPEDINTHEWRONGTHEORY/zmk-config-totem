@@ -60,6 +60,7 @@
             bindings = <&kp C_SLEEP>;
             key-positions = <10 11 12 13>;
             layers = <0>;
+            timeout-ms = <350>;
         };
 
         mouse_mode_fixed {
@@ -70,8 +71,8 @@
 
         return_to_base_layer {
             bindings = <&tog 0>;
-            key-positions = <37 35>;
-            layers = <3 4>;
+            key-positions = <35 37>;
+            layers = <3>;
         };
     };
 
@@ -114,7 +115,7 @@
             >;
         };
 
-        mouse_multimedia_dupilcate {
+        mouse_multimedia_duplicate {
             bindings = <
         &kp C_VOLUME_UP    &trans          &trans            &trans      &trans    &trans    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP
         &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F      &trans    &mkp MB4  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN
