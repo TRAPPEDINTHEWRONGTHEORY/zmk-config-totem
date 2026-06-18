@@ -69,11 +69,6 @@
             layers = <0>;
         };
 
-        return_to_base_layer {
-            bindings = <&tog 3>;
-            key-positions = <35 37>;
-            layers = <3>;
-        };
     };
 
     keymap {
