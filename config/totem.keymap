@@ -85,6 +85,28 @@
             key-positions = <35 37>;
             layers = <3 4>;
         };
+
+        previous_tab {
+            bindings = <&kp LC(LS(TAB))>;
+            key-positions = <6 7>;
+            layers = <3 4>;
+        };
+
+        next_tab {
+            bindings = <&kp LC(TAB)>;
+            key-positions = <7 8>;
+            layers = <3 4>;
+        };
+    };
+
+    macros {
+        macro_previous_tab: macro_previous_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(TAB))>, <&macro_press>;
+
+            label = "MACRO_PREVIOUS_TAB";
+        };
     };
 
     keymap {
