@@ -64,11 +64,11 @@
             require-prior-idle-ms = <60>;
         };
 
-        backspace_delete_tap_dance: backspace_delete_tap_dance {
+        copy_cut_paste: copy_cut_paste {
             compatible = "zmk,behavior-tap-dance";
-            label = "BACKSPACE_DELETE_TAP_DANCE";
+            label = "COPY_CUT_PASTE";
             #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&mt DELETE BACKSPACE>;
+            bindings = <&mt C_AC_PASTE C_AC_COPY>, <&kp C_AC_CUT>;
         };
     };
 
@@ -130,16 +130,16 @@
            &kp Q                 &kp W                 &kp E              &kp R                         &kp T       &kp Y             &kp U                          &kp I                &kp O                 &kp P
            &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row_shift LEFT_SHIFT F  &kp G       &kp H             &home_row_shift RIGHT_SHIFT J  &home_row LCTRL K    &home_row LEFT_ALT L  &home_row LEFT_GUI SEMICOLON
 &lt 5 TAB  &kp Z                 &kp X                 &kp C              &kp V                         &kp B       &kp N             &kp M                          &kp COMMA            &kp DOT               &kp FSLH                      &kp BACKSPACE
-                                                       &kp LCTRL          &mo 1                         &kp LALT    &longtap 2 ENTER  &kp SPACE                      &language_tap_dance
+                                                       &copy_cut_paste    &mo 1                         &kp LALT    &longtap 2 ENTER  &kp SPACE                      &language_tap_dance
             >;
         };
 
         num_layer {
             bindings = <
-           &kp ESC                   &kp CAPS              &trans             &trans               &trans                  &trans              &trans                  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &mt DOUBLE_QUOTES SQT
-           &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT NUMBER_5    &mt CARET NUMBER_6  &mt AMPERSAND NUMBER_7  &mt ASTERISK NUMBER_8        &mt LEFT_PARENTHESIS NUMBER_9  &mt RIGHT_PARENTHESIS NUMBER_0
-&kp TILDE  &kp F2                    &kp LA(F4)            &kp F5             &kp F11              &kp F4                  &mt UNDER MINUS     &mt EQUAL PLUS          &mt LESS_THAN COMMA          &mt GREATER_THAN PERIOD        &mt QUESTION SLASH              &trans
-                                                           &trans             &trans               &trans                  &trans              &trans                  &trans
+           &kp ESC                   &kp CAPS              &kp PRINTSCREEN    &kp C_AL_TASK_MANAGER  &trans                  &trans              &trans                  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &mt DOUBLE_QUOTES SQT
+           &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4    &mt PERCENT NUMBER_5    &mt CARET NUMBER_6  &mt AMPERSAND NUMBER_7  &mt ASTERISK NUMBER_8        &mt LEFT_PARENTHESIS NUMBER_9  &mt RIGHT_PARENTHESIS NUMBER_0
+&kp TILDE  &kp F2                    &mt LA(F4) F4         &kp F5             &kp F10                &kp F11                 &mt UNDER MINUS     &mt EQUAL PLUS          &mt LESS_THAN COMMA          &mt GREATER_THAN PERIOD        &mt QUESTION SLASH              &trans
+                                                           &trans             &trans                 &trans                  &trans              &trans                  &trans
             >;
         };
 
