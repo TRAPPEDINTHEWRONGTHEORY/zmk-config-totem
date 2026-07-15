@@ -104,12 +104,6 @@
             key-positions = <7 8>;
             layers = <3 4>;
         };
-
-        delete_button {
-            bindings = <&kp DELETE>;
-            key-positions = <16 31>;
-            layers = <0>;
-        };
     };
 
     macros {
