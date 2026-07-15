@@ -70,6 +70,20 @@
             #binding-cells = <0>;
             bindings = <&mt LC(X) LC(C)>, <&kp LC(V)>;
         };
+
+        page_up_home: page_up_home {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PAGE_UP_HOME";
+            #binding-cells = <0>;
+            bindings = <&kp PAGE_UP>, <&kp HOME>;
+        };
+
+        page_down_end: page_down_end {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PAGE_DOWN_END";
+            #binding-cells = <0>;
+            bindings = <&kp PAGE_DOWN>, <&kp END>;
+        };
     };
 
     combos {
@@ -139,28 +153,28 @@
 
         nav_layer {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans         &kp HOME            &kp UP_ARROW    &kp END          &msc SCRL_UP
-        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &kp PAGE_UP    &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &kp PAGE_DOWN  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT)    &trans          &trans
-                                                    &trans             &trans                  &trans    &trans         &trans              &trans
+        &trans                &trans                &trans             &trans                  &trans    &trans          &kp HOME            &kp UP_ARROW    &kp END          &msc SCRL_UP
+        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc SCRL_DOWN
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT)    &trans          &trans
+                                                    &trans             &trans                  &trans    &trans          &trans              &trans
             >;
         };
 
         mouse_layer {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans         &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
-        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &kp PAGE_UP    &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &kp PAGE_DOWN  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT_ARROW)  &trans          &trans
-                                                    &trans             &trans                  &trans    &trans         &trans              &trans
+        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
+        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT_ARROW)  &trans          &trans
+                                                    &trans             &trans                  &trans    &trans          &trans              &trans
             >;
         };
 
         mouse_layer_duplicate {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans         &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
-        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &kp PAGE_UP    &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &kp PAGE_DOWN  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT_ARROW)  &trans          &trans
-                                                    &trans             &trans                  &trans    &trans         &trans              &trans
+        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
+        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT_ARROW)  &trans          &trans
+                                                    &trans             &trans                  &trans    &trans          &trans              &trans
             >;
         };
 
