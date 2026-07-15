@@ -83,13 +83,13 @@
 
         mouse_mode_fix {
             bindings = <&to 3>;
-            key-positions = <35 37>;
+            key-positions = <16 17 18>;
             layers = <0>;
         };
 
         return_to_base_layer {
             bindings = <&to 0>;
-            key-positions = <35 37>;
+            key-positions = <13 12>;
             layers = <3 4>;
         };
 
