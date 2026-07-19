@@ -84,20 +84,6 @@
             #binding-cells = <0>;
             bindings = <&kp PAGE_DOWN>, <&kp END>;
         };
-
-        go_to_the_back_and_left: go_to_the_back_and_left {
-            compatible = "zmk,behavior-tap-dance";
-            label = "GO_TO_THE_BACK_AND_LEFT";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_ARROW)>, <&msc SCRL_LEFT>;
-        };
-
-        go_to_the_forward_and_right: go_to_the_forward_and_right {
-            compatible = "zmk,behavior-tap-dance";
-            label = "GO_TO_THE_FORWARD_AND_RIGHT";
-            #binding-cells = <0>;
-            bindings = <&kp LA(RIGHT_ARROW)>, <&msc SCRL_RIGHT>;
-        };
     };
 
     combos {
@@ -178,7 +164,7 @@
             bindings = <
         &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK                 &mmv MOVE_UP    &mkp RCLK                     &msc SCRL_UP
         &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT            &mmv MOVE_DOWN  &mmv MOVE_RIGHT               &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &go_to_the_back_and_left  &trans          &go_to_the_forward_and_right  &trans          &trans
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT_ARROW)  &trans          &trans
                                                     &trans             &trans                  &trans    &trans          &trans                    &trans
             >;
         };
@@ -187,7 +173,7 @@
             bindings = <
         &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK                 &mmv MOVE_UP    &mkp RCLK                     &msc SCRL_UP
         &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT            &mmv MOVE_DOWN  &mmv MOVE_RIGHT               &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &go_to_the_back_and_left  &trans          &go_to_the_forward_and_right  &trans          &trans
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT_ARROW)  &trans          &trans
                                                     &trans             &trans                  &trans    &trans          &trans                    &trans
             >;
         };
