@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LANGUAGE_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&lang_lt 3 LANG1>, <&kp LANGUAGE_2>;
+            bindings = <&lt 4 LANG1>, <&kp LANGUAGE_2>;
         };
 
         home_row_shift: home_row_shift {
@@ -80,15 +80,6 @@
             label = "TAB_PLAY";
             #binding-cells = <0>;
             bindings = <&mt LC(LS(T)) LC(W)>, <&kp F5>;
-        };
-
-        lang_lt: lang_lt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LANG_LT";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
         };
     };
 
@@ -155,7 +146,7 @@
             bindings = <
            &kp Q                 &kp W                 &kp E              &kp R                         &kp T       &kp Y        &kp U                          &kp I                &kp O                 &kp P
            &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row_shift LEFT_SHIFT F  &kp G       &kp H        &home_row_shift RIGHT_SHIFT J  &home_row LCTRL K    &home_row LEFT_ALT L  &home_row LEFT_GUI SEMICOLON
-&lt 4 TAB  &kp Z                 &kp X                 &kp C              &kp V                         &kp B       &kp N        &kp M                          &kp COMMA            &kp DOT               &kp FSLH                      &kp BACKSPACE
+&lt 5 TAB  &kp Z                 &kp X                 &kp C              &kp V                         &kp B       &kp N        &kp M                          &kp COMMA            &kp DOT               &kp FSLH                      &kp BACKSPACE
                                                        &copy_cut_paste    &mo 1                         &kp LALT    &lt 2 ENTER  &kp SPACE                      &language_tap_dance
             >;
         };
@@ -179,6 +170,15 @@
         };
 
         mouse_layer {
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
+        &trans  &trans  &trans  &trans  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
+&trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &tab_play       &kp LA(RIGHT_ARROW)  &trans          &kp DEL
+                        &trans  &trans  &trans    &trans          &trans              &trans
+            >;
+        };
+
+        mouse_layer_duplicate {
             bindings = <
         &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
         &trans  &trans  &trans  &trans  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
