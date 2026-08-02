@@ -129,7 +129,7 @@
         Alt_F_and_layer0 {
             bindings = <&alt_F_and_layer0>;
             key-positions = <34 13>;
-            layers = <3 4>;
+            layers = <3>;
         };
     };
 
