@@ -85,9 +85,9 @@
             bindings = <&kp PAGE_DOWN>, <&kp END>;
         };
 
-        closeandreopen_refresh_the_tab: closeandreopen_refresh_the_tab {
+        play_with_tabs: play_with_tabs {
             compatible = "zmk,behavior-tap-dance";
-            label = "CLOSEANDREOPEN_REFRESH_THE_TAB";
+            label = "PLAY_WITH_TABS";
             #binding-cells = <0>;
             bindings = <&mt LC(LS(T)) LC(W)>, <&kp F5>;
         };
@@ -96,14 +96,6 @@
         // [추가] 3번(mouse_layer)로 복귀시켜주는 Sticky Layer 정의
         // 4000ms 동안 입력이 없거나 키를 치고 타이핑을 마치면 mouse layer로 복귀합니다.
         // ------------------------------------------------------------------
-        sl_to_mouse: sl_to_mouse {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            label = "SL_TO_MOUSE";
-            bindings = <&mo>;
-            release-after-ms = <4000>;
-            ignore-modifiers;
-        };
     };
 
     combos {
@@ -151,15 +143,23 @@
         // [수정] Alt+F 누른 후 base(0번) 레이어로 갔다가
         // 3번 레이어 복귀용 Sticky Layer를 예약 발동시키는 매크로
         // ------------------------------------------------------------------
+
         alt_F_and_temp_base: alt_F_and_temp_base {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp F>,
-                <&macro_release &kp LALT>,
-                <&macro_tap &to 0>,        // 일단 Base 레이어로 이동
-                <&macro_tap &sl_to_mouse 3>; // 3번 레이어로 돌아갈 준비(Sticky)
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp F>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&to 0>,
+                <&macro_wait_time 3000>,
+                <&macro_tap>,
+                <&to 3>;
+ // 3번 레이어로 돌아갈 준비(Sticky)
         };
     };
 
@@ -186,27 +186,27 @@
 
         nav_layer {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans          &kp HOME            &kp UP_ARROW                     &kp END              &msc SCRL_UP
-        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &kp LEFT_ARROW      &kp DOWN_ARROW                   &kp RIGHT_ARROW      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &closeandreopen_refresh_the_tab  &kp LA(RIGHT_ARROW)  &trans          &kp DELETE
+        &trans                &trans                &trans             &trans                  &trans    &trans          &kp HOME            &kp UP_ARROW     &kp END              &msc SCRL_UP
+        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &kp LEFT_ARROW      &kp DOWN_ARROW   &kp RIGHT_ARROW      &msc SCRL_DOWN
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &play_with_tabs  &kp LA(RIGHT_ARROW)  &trans          &kp DELETE
                                                     &trans             &trans                  &trans    &trans          &trans              &trans
             >;
         };
 
         mouse_layer {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP                     &mkp RCLK            &msc SCRL_UP
-        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN                   &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &closeandreopen_refresh_the_tab  &kp LA(RIGHT_ARROW)  &trans          &kp DEL
+        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP     &mkp RCLK            &msc SCRL_UP
+        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN   &mmv MOVE_RIGHT      &msc SCRL_DOWN
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &play_with_tabs  &kp LA(RIGHT_ARROW)  &trans          &kp DEL
                                                     &trans             &trans                  &trans    &trans          &trans              &trans
             >;
         };
 
         mouse_layer_duplicate {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP                     &mkp RCLK            &msc SCRL_UP
-        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN                   &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &closeandreopen_refresh_the_tab  &kp LA(RIGHT_ARROW)  &trans          &kp DEL
+        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP     &mkp RCLK            &msc SCRL_UP
+        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN   &mmv MOVE_RIGHT      &msc SCRL_DOWN
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &play_with_tabs  &kp LA(RIGHT_ARROW)  &trans          &kp DEL
                                                     &trans             &trans                  &trans    &trans          &trans              &trans
             >;
         };
