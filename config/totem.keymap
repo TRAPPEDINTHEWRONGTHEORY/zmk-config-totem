@@ -128,12 +128,14 @@
     };
 
     macros {
-        macro_previous_tab: macro_previous_tab {
+        alt_F_and_layer0: alt_F_and_layer0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(TAB))>, <&macro_press>;
-
-            label = "MACRO_PREVIOUS_TAB";
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LALT>
+                , <&to 0>;
         };
     };
 
