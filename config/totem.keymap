@@ -131,8 +131,8 @@
             layers = <3 4>;
         };
 
-        alt_F_and_temp_base {
-            bindings = <&alt_F_and_temp_base>;
+        alt_F_and_base {
+            bindings = <&alt_F_and_base>;
             key-positions = <34 13>;
             layers = <3>;
         };
@@ -144,21 +144,18 @@
         // 3번 레이어 복귀용 Sticky Layer를 예약 발동시키는 매크로
         // ------------------------------------------------------------------
 
-        alt_F_and_temp_base: alt_F_and_temp_base {
+        alt_F_and_base: alt_F_and_temp_base {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&to 0>,
                 <&macro_press>,
                 <&kp LALT>,
                 <&macro_tap>,
                 <&kp F>,
                 <&macro_release>,
                 <&kp LALT>,
-                <&macro_wait_time 3000>,
                 <&macro_tap>,
-                <&to 3>;
+                <&to 0>;
 
             // 3번 레이어로 돌아갈 준비(Sticky)
         };
