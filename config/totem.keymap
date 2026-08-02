@@ -91,6 +91,19 @@
             #binding-cells = <0>;
             bindings = <&mt LC(LS(T)) LC(W)>, <&kp F5>;
         };
+
+        // ------------------------------------------------------------------
+        // [추가] 3번(mouse_layer)로 복귀시켜주는 Sticky Layer 정의
+        // 4000ms 동안 입력이 없거나 키를 치고 타이핑을 마치면 mouse layer로 복귀합니다.
+        // ------------------------------------------------------------------
+        sl_to_mouse: sl_to_mouse {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            label = "SL_TO_MOUSE";
+            bindings = <&mo>;
+            release-after-ms = <4000>;
+            ignore-modifiers;
+        };
     };
 
     combos {
@@ -126,26 +139,27 @@
             layers = <3 4>;
         };
 
-        Alt_F_and_layer0 {
-            bindings = <&alt_F_and_layer0>;
+        alt_F_and_temp_base {
+            bindings = <&alt_F_and_temp_base>;
             key-positions = <34 13>;
             layers = <3>;
         };
     };
 
     macros {
-        alt_F_and_layer0: alt_F_and_layer0 {
+        // ------------------------------------------------------------------
+        // [수정] Alt+F 누른 후 base(0번) 레이어로 갔다가
+        // 3번 레이어 복귀용 Sticky Layer를 예약 발동시키는 매크로
+        // ------------------------------------------------------------------
+        alt_F_and_temp_base: alt_F_and_temp_base {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp F>,
-                <&macro_release>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&to 0>;
+                <&macro_press &kp LALT>,
+                <&macro_tap &kp F>,
+                <&macro_release &kp LALT>,
+                <&macro_tap &to 0>,        // 일단 Base 레이어로 이동
+                <&macro_tap &sl_to_mouse 3>; // 3번 레이어로 돌아갈 준비(Sticky)
         };
     };
 
