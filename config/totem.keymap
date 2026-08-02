@@ -143,7 +143,9 @@
                 <&macro_tap>,
                 <&kp F>,
                 <&macro_release>,
-                <&kp LALT &to 0>;
+                <&kp LALT>,
+                <&macro_tap>,
+                <&to 0>;
         };
     };
 
