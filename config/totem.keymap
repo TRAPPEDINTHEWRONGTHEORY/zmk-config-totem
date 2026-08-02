@@ -35,13 +35,6 @@
             require-prior-idle-ms = <130>;
         };
 
-        language_tap_dance: language_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LANGUAGE_TAP_DANCE";
-            #binding-cells = <0>;
-            bindings = <&lt 3 LANG1>, <&kp LANGUAGE_2>;
-        };
-
         home_row_shift: home_row_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "HOME_ROW_SHIFT";
@@ -52,6 +45,23 @@
             quick-tap-ms = <130>;
             flavor = "tap-preferred";
             require-prior-idle-ms = <60>;
+        };
+
+        lang_lt: lang_lt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LANG_LT";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+        };
+
+        language_tap_dance: language_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LANGUAGE_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&lang_lt 3 LANG1>, <&kp LANGUAGE_2>;
         };
 
         copy_cut_paste: copy_cut_paste {
@@ -116,7 +126,7 @@
             layers = <3>;
         };
 
-        alt_F_and_base {
+        alt_F_and_back_to_base {
             bindings = <&alt_F_and_base>;
             key-positions = <34 13>;
             layers = <3>;
