@@ -84,6 +84,13 @@
             #binding-cells = <0>;
             bindings = <&kp PAGE_DOWN>, <&kp END>;
         };
+
+        closeandreopen_refresh_the_tab: closeandreopen_refresh_the_tab {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CLOSEANDREOPEN_REFRESH_THE_TAB";
+            #binding-cells = <0>;
+            bindings = <&mt LC(LS(T)) LC(W)>, <&kp F5>;
+        };
     };
 
     combos {
@@ -153,27 +160,27 @@
 
         nav_layer {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans          &kp HOME            &kp UP_ARROW    &kp END              &msc SCRL_UP
-        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT_ARROW)  &trans          &kp DELETE
+        &trans                &trans                &trans             &trans                  &trans    &trans          &kp HOME            &kp UP_ARROW                     &kp END              &msc SCRL_UP
+        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &kp LEFT_ARROW      &kp DOWN_ARROW                   &kp RIGHT_ARROW      &msc SCRL_DOWN
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &closeandreopen_refresh_the_tab  &kp LA(RIGHT_ARROW)  &trans          &kp DELETE
                                                     &trans             &trans                  &trans    &trans          &trans              &trans
             >;
         };
 
         mouse_layer {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
-        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT_ARROW)  &trans          &kp DEL
+        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP                     &mkp RCLK            &msc SCRL_UP
+        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN                   &mmv MOVE_RIGHT      &msc SCRL_DOWN
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &closeandreopen_refresh_the_tab  &kp LA(RIGHT_ARROW)  &trans          &kp DEL
                                                     &trans             &trans                  &trans    &trans          &trans              &trans
             >;
         };
 
         mouse_layer_duplicate {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
-        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &trans          &kp LA(RIGHT_ARROW)  &trans          &kp DEL
+        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP                     &mkp RCLK            &msc SCRL_UP
+        &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row LEFT_SHIFT F  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN                   &mmv MOVE_RIGHT      &msc SCRL_DOWN
+&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &closeandreopen_refresh_the_tab  &kp LA(RIGHT_ARROW)  &trans          &kp DEL
                                                     &trans             &trans                  &trans    &trans          &trans              &trans
             >;
         };
