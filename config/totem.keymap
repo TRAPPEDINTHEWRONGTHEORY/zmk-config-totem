@@ -246,9 +246,9 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        one_plus_two_is_four {
+        one_plus_two_is_three {
             if-layers = <2 1>;
-            then-layer = <4>;
+            then-layer = <3>;
         };
     };
 };
