@@ -35,21 +35,11 @@
             require-prior-idle-ms = <130>;
         };
 
-        longtap: longtap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LONGTAP";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
         language_tap_dance: language_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "LANGUAGE_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&longtap 3 LANG1>, <&kp LANGUAGE_2>;
+            bindings = <&lt 3 LANG1>, <&kp LANGUAGE_2>;
         };
 
         home_row_shift: home_row_shift {
@@ -99,7 +89,7 @@
         Middle-click {
             bindings = <&mkp MCLK>;
             key-positions = <6 8>;
-            layers = <3 4>;
+            layers = <3>;
         };
 
         mouse_mode_fix {
@@ -111,19 +101,19 @@
         return_to_base_layer {
             bindings = <&to 0>;
             key-positions = <13 12>;
-            layers = <3 4>;
+            layers = <3>;
         };
 
         previous_tab {
             bindings = <&kp LC(LS(TAB))>;
             key-positions = <6 7>;
-            layers = <3 4>;
+            layers = <3>;
         };
 
         next_tab {
             bindings = <&kp LC(TAB)>;
             key-positions = <7 8>;
-            layers = <3 4>;
+            layers = <3>;
         };
 
         alt_F_and_base {
@@ -156,7 +146,7 @@
             bindings = <
            &kp Q                 &kp W                 &kp E              &kp R                         &kp T       &kp Y        &kp U                          &kp I                &kp O                 &kp P
            &home_row LEFT_GUI A  &home_row LEFT_ALT S  &home_row LCTRL D  &home_row_shift LEFT_SHIFT F  &kp G       &kp H        &home_row_shift RIGHT_SHIFT J  &home_row LCTRL K    &home_row LEFT_ALT L  &home_row LEFT_GUI SEMICOLON
-&lt 5 TAB  &kp Z                 &kp X                 &kp C              &kp V                         &kp B       &kp N        &kp M                          &kp COMMA            &kp DOT               &kp FSLH                      &kp BACKSPACE
+&lt 4 TAB  &kp Z                 &kp X                 &kp C              &kp V                         &kp B       &kp N        &kp M                          &kp COMMA            &kp DOT               &kp FSLH                      &kp BACKSPACE
                                                        &copy_cut_paste    &mo 1                         &kp LALT    &lt 2 ENTER  &kp SPACE                      &language_tap_dance
             >;
         };
@@ -172,28 +162,19 @@
 
         nav_layer {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans          &kp HOME            &kp UP_ARROW    &kp END              &msc SCRL_UP
-        &trans                &trans                &trans             &trans                  &trans    &page_up_home   &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &tab_play       &kp LA(RIGHT_ARROW)  &trans          &kp DELETE
-                                                    &trans             &trans                  &trans    &trans          &trans              &trans
+        &trans  &trans  &trans  &trans  &trans    &trans          &kp HOME            &kp UP_ARROW    &kp END              &msc SCRL_UP
+        &trans  &trans  &trans  &trans  &trans    &page_up_home   &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &msc SCRL_DOWN
+&trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &tab_play       &kp LA(RIGHT_ARROW)  &trans          &kp DELETE
+                        &trans  &trans  &trans    &trans          &trans              &trans
             >;
         };
 
         mouse_layer {
             bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
-        &trans                &trans                &trans             &trans                  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &tab_play       &kp LA(RIGHT_ARROW)  &trans          &kp DEL
-                                                    &trans             &trans                  &trans    &trans          &trans              &trans
-            >;
-        };
-
-        mouse_layer_duplicate {
-            bindings = <
-        &trans                &trans                &trans             &trans                  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
-        &trans                &trans                &trans             &trans                  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans                &trans                &trans             &trans                  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &tab_play       &kp LA(RIGHT_ARROW)  &trans          &kp DEL
-                                                    &trans             &trans                  &trans    &trans          &trans              &trans
+        &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
+        &trans  &trans  &trans  &trans  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
+&trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &tab_play       &kp LA(RIGHT_ARROW)  &trans          &kp DEL
+                        &trans  &trans  &trans    &trans          &trans              &trans
             >;
         };
 
