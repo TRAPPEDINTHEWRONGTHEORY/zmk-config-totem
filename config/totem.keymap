@@ -58,7 +58,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "COPY_CUT_PASTE";
             #binding-cells = <0>;
-            bindings = <&mt LC(X) LC(C)>, <&kp LC(V)>;
+            bindings = <&mt LC(K_CUT) LC(K_COPY)>, <&kp LC(K_PASTE)>;
         };
 
         page_up_home: page_up_home {
@@ -75,9 +75,9 @@
             bindings = <&kp PAGE_DOWN>, <&kp END>;
         };
 
-        tab_play: tab_play {
+        play_with_tab: play_with_tab {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAB_PLAY";
+            label = "PLAY_WITH_TAB";
             #binding-cells = <0>;
             bindings = <&mt LC(LS(T)) LC(W)>, <&kp F5>;
         };
@@ -164,7 +164,7 @@
             bindings = <
         &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK           &kp UP_ARROW    &mkp RCLK            &msc SCRL_UP
         &trans  &trans  &trans  &trans  &trans    &page_up_home   &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &msc SCRL_DOWN
-&trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &tab_play       &kp LA(RIGHT_ARROW)  &trans          &kp DELETE
+&trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &play_with_tab  &kp LA(RIGHT_ARROW)  &trans          &kp DELETE
                         &trans  &trans  &trans    &trans          &trans              &trans
             >;
         };
@@ -173,7 +173,7 @@
             bindings = <
         &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
         &trans  &trans  &trans  &trans  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &tab_play       &kp LA(RIGHT_ARROW)  &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &play_with_tab  &kp LA(RIGHT_ARROW)  &trans          &kp BSPC
                         &trans  &trans  &trans    &trans          &trans              &trans
             >;
         };
@@ -182,7 +182,7 @@
             bindings = <
         &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
         &trans  &trans  &trans  &trans  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
-&trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &tab_play       &kp LA(RIGHT_ARROW)  &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &play_with_tab  &kp LA(RIGHT_ARROW)  &trans          &trans
                         &trans  &trans  &trans    &trans          &trans              &trans
             >;
         };
