@@ -58,7 +58,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "COPY_CUT_PASTE";
             #binding-cells = <0>;
-            bindings = <&mt LC(C_AC_CUT) LC(C_AC_COPY)>, <&kp LC(C_AC_PASTE)>;
+            bindings = <&mt K_CUT K_COPY>, <&kp K_PASTE>;
         };
 
         page_up_home: page_up_home {
