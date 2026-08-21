@@ -100,7 +100,6 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_FOR_NUMS_MACRO";
             bindings = <&nums_macro>, <&none>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -180,7 +179,7 @@
         characters_macro: words_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp D &kp EXCLAMATION>;
+            bindings = <&kp D &kp N &kp W &kp N &kp C &kp J &kp S &kp W &kp O &kp NUBMER_1 &kp EXCLAMATION>;
             label = "WORDS_MACRO";
         };
     };
