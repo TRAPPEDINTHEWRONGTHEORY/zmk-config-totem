@@ -179,7 +179,7 @@
         characters_macro: words_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp D &kp N &kp W &kp N &kp C &kp J &kp S &kp W &kp O &kp NUBMER_1 &kp EXCLAMATION>;
+            bindings = <&kp D &kp EXCLAMATION>;
             label = "WORDS_MACRO";
         };
     };
