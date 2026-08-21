@@ -137,20 +137,6 @@
                 <&macro_tap>,
                 <&to 0>;
         };
-
-        numbers_macro: numbers_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp NUMBER_4>, <&macro_release>;
-            label = "NUMBERS_MACRO";
-        };
-
-        words_macro: words_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp d>, <&macro_release>;
-            label = "WORDS_MACRO";
-        };
     };
 
     keymap {
