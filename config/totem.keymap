@@ -124,7 +124,7 @@
     };
 
     macros {
-        alt_F_and_base: alt_F_and_temp_base {
+        alt_F_and_base: alt_F_and_base {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -136,6 +136,18 @@
                 <&kp LALT>,
                 <&macro_tap>,
                 <&to 0>;
+        };
+
+        nums_macro: nums_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp Number_4 &kp Number_1 &kp Number_1 &kp Number_7 &kp Number_8 &kp Number_8>;
+        };
+
+        words_macro: words_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp d &kp n &kp w &kp n &kp c &kp j &kp s &kp w &kp o &kp Number_1 &kp EXCLAMATION>;
         };
     };
 
