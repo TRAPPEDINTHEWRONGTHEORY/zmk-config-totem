@@ -137,6 +137,20 @@
                 <&macro_tap>,
                 <&to 0>;
         };
+
+        nums_macro: nums_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_4 &kp NUMBER_1 &kp NUMBER_1 &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_8>;
+            label = "NUMS_MACRO";
+        };
+
+        words_macro: words_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp EXCLAMATION>;
+            label = "WORDS_MACRO";
+        };
     };
 
     keymap {
