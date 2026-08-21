@@ -81,6 +81,20 @@
             #binding-cells = <0>;
             bindings = <&mt LC(LS(T)) LC(W)>, <&kp F5>;
         };
+
+        q_nums_macro: q_nums_macro {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Q_NUMS_MACRO";
+            #binding-cells = <0>;
+            bindings = <&none>, <&none>;
+        };
+
+        w_words_macro: w_words_macro {
+            compatible = "zmk,behavior-tap-dance";
+            label = "W_WORDS_MACRO";
+            #binding-cells = <0>;
+            bindings = <&none>, <&none>;
+        };
     };
 
     combos {
