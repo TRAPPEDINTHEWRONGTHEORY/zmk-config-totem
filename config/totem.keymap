@@ -156,11 +156,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&kp NUMBER_4>, <&macro_release>;
-                       <&macro_tap>, <&kp NUMBER_1>, <&macro_release>;
-                       <&macro_tap>, <&kp NUMBER_1>, <&macro_release>;
-                       <&macro_tap>, <&kp NUMBER_7>, <&macro_release>;
-                       <&macro_tap>, <&kp NUMBER_8>, <&macro_release>;
-                       <&macro_tap>, <&kp NUMBER_8>, <&macro_release>;
             label = "NUMBERS_MACRO";
         };
 
@@ -168,16 +163,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&kp d>, <&macro_release>;
-                       <&macro_tap>, <&kp n>, <&macro_release>;
-                       <&macro_tap>, <&kp w>, <&macro_release>;
-                       <&macro_tap>, <&kp d>, <&macro_release>;
-                       <&macro_tap>, <&kp c>, <&macro_release>;
-                       <&macro_tap>, <&kp j>, <&macro_release>;
-                       <&macro_tap>, <&kp s>, <&macro_release>;
-                       <&macro_tap>, <&kp w>, <&macro_release>;
-                       <&macro_tap>, <&kp o>, <&macro_release>;
-                       <&macro_tap>, <&kp NUMBER_1>, <&macro_release>;
-                       <&macro_tap>, <&kp EXCLAMATION>, <&macro_release>;
             label = "WORDS_MACRO";
         };
     };
