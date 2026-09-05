@@ -139,6 +139,11 @@
             key-positions = <34 13>;
             layers = <3>;
         };
+
+        return_to_base_layer_2 {
+            bindings = <&to 0>;
+            key-positions = <28 27 29>;
+        };
     };
 
     macros {
@@ -206,7 +211,7 @@
         &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK           &mmv MOVE_UP    &mkp RCLK            &msc SCRL_UP
         &trans  &trans  &trans  &trans  &trans    &page_up_home   &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &msc SCRL_DOWN
 &trans  &trans  &trans  &trans  &trans  &trans    &page_down_end  &kp LA(LEFT_ARROW)  &play_with_tab  &kp LA(RIGHT_ARROW)  &trans          &kp BSPC
-                        &trans  &trans  &trans    &trans          &trans              &trans
+                        &trans  &trans  &trans    &mo 2           &trans              &trans
             >;
         };
 
