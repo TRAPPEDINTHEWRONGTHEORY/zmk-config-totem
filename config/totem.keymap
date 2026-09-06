@@ -80,6 +80,8 @@
             label = "PLAY_WITH_TAB";
             #binding-cells = <0>;
             bindings = <&mt LC(LS(T)) LC(W)>, <&kp F5>;
+
+            tapping-term-ms = <300>;
         };
 
         esc_and_nums: esc_and_nums {
