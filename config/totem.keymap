@@ -79,7 +79,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "PLAY_WITH_TAB";
             #binding-cells = <0>;
-            bindings = <&mt LC(LS(T)) LC(W)>, <&kp F5>;
+            bindings = <&mt LC(LS(T)) LC(W)>, <&mt LG(TAB) F5>;
 
             tapping-term-ms = <300>;
         };
