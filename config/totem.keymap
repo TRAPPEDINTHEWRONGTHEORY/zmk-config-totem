@@ -107,6 +107,8 @@
             label = "WIN_LEFT_ARROW";
             #binding-cells = <0>;
             bindings = <&kp LG(LEFT)>, <&kp LC(LG(LEFT))>;
+
+            tapping-term-ms = <500>;
         };
 
         win_right_arrow: win_right_arrow {
@@ -114,6 +116,8 @@
             label = "WIN_RIGHT_ARROW";
             #binding-cells = <0>;
             bindings = <&kp LG(RIGHT)>, <&kp LC(LG(RIGHT))>;
+
+            tapping-term-ms = <500>;
         };
     };
 
