@@ -177,6 +177,12 @@
             key-positions = <28 29>;
             layers = <3 4>;
         };
+
+        win_tab {
+            bindings = <&kp LG(TAB)>;
+            key-positions = <18 19>;
+            layers = <0 3 4>;
+        };
     };
 
     macros {
